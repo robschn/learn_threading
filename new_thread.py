@@ -10,7 +10,9 @@ def do_something(seconds):
 
 with concurrent.futures.ThreadPoolExecutor() as executor:
     f1 = executor.submit(do_something, 1)
-    print (f1.result)
+    f2 = executor.submit(do_something, 1)
+    print (f1.result())
+    print (f1.result())
 
 finish = time.perf_counter()
 
