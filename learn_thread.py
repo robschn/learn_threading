@@ -1,3 +1,4 @@
+import threading
 import time
 
 start = time.perf_counter()
@@ -7,8 +8,8 @@ def do_something():
     time.sleep(1)
     print ('Done sleeping.')
 
-do_something()
-
+t1 = threading.Thread()
+t2 = threading.Thread(target=do_something)
 
 finish = time.perf_counter()
 
